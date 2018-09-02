@@ -56,7 +56,7 @@ ROOT_URLCONF = 'chatsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['../chatapp/templates'],
+        'DIRS': [os.path.join('../chatapp', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +81,8 @@ CHANNEL_LAYERS = {
         "ROUTING": "chatapp.routing.channel_routing",
     },
 }
+
+STATIC_ROOT= os.path.join('../chatapp','static')
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
